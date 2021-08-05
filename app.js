@@ -67,7 +67,7 @@ app.get('/', function(req, res){
         }
     })
     
-});
+}); 
 
 // app.get('/work', function(req,res){
 //     res.render("list", {listTitle:"Work List", newItems:workItems})
