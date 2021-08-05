@@ -16,7 +16,7 @@ app.get('/', function(req, res){
     let day = date.getDate();
     res.render("list", {listTitle: day, newItems:items});
     
-});
+}); 
 
 app.get('/work', function(req,res){
     res.render("list", {listTitle:"Work List", newItems:workItems})
