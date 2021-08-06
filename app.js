@@ -5,6 +5,8 @@ const mongoose = require("mongoose")
 const app = express();
 const _ = require('lodash')
 
+require('dotenv').config()
+
 // var items = ["Buy food", "Cook food", "Eat food"];
 var workItems = [];
 
@@ -13,7 +15,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extented:true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.a3ov0.mongodb.net/todoListDB?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 
 const itemSchema = {
     name: {
